@@ -1,0 +1,120 @@
+# 🛒 API Liste de Courses (Node.js / Express)
+
+Une petite API REST développée avec **Node.js** et **Express**, permettant de gérer une liste de courses (CRUD complet).  
+Projet pédagogique pour comprendre la structure **Model / Controller / Router** et les codes HTTP standards.
+
+---
+
+## 🚀 Installation
+
+1. Cloner le projet :
+
+   ```bash
+   git clone https://github.com/votre-repo/api-liste-courses.git
+   cd api-liste-courses
+   ```
+
+2. Installer les dépendances :
+
+   ```bash
+   npm install express
+   npm install --save-dev nodemon
+   ```
+
+3. Lancer le serveur :
+   ```bash
+   npm start
+   ```
+
+Le serveur sera accessible sur :
+
+```
+http://localhost:3000
+```
+
+---
+
+## 📂 Architecture du projet
+
+```
+project/
+├── models/
+│   └── coursesModel.js
+├── controllers/
+│   └── coursesController.js
+├── routes/
+│   └── coursesRoutes.js
+├── index.js
+└── package.json
+```
+
+---
+
+## 🔧 Routes principales
+
+| Méthode | Route              | Description                     |
+| ------- | ------------------ | ------------------------------- |
+| GET     | `/api/courses`     | Récupérer toute la liste        |
+| GET     | `/api/courses/:id` | Récupérer un article par ID     |
+| POST    | `/api/courses`     | Ajouter un nouvel article       |
+| PUT     | `/api/courses/:id` | Modifier un article existant    |
+| DELETE  | `/api/courses/:id` | Supprimer un article spécifique |
+| DELETE  | `/api/courses`     | **Vider la liste entière**      |
+
+---
+
+## 📦 Exemple de requêtes
+
+### ➕ Ajouter un article
+
+**POST** `/api/courses`
+
+```json
+{
+  "nom": "Pommes",
+  "quantite": 5
+}
+```
+
+### 🔄 Modifier un article
+
+**PUT** `/api/courses/1730729812`
+
+```json
+{
+  "nom": "Bananes",
+  "quantite": 6
+}
+```
+
+### ❌ Supprimer un article
+
+**DELETE** `/api/courses/1730729812`
+
+### 🧹 Vider la liste
+
+**DELETE** `/api/courses`
+
+---
+
+## 📘 Technologies utilisées
+
+- Node.js
+- Express.js
+- Nodemon (dev)
+
+---
+
+## 💡 Bonnes pratiques
+
+- Respecter les conventions REST.
+- Utiliser des noms cohérents : `index`, `show`, `store`, `update`, `destroy`.
+- Retourner les bons **codes HTTP** (`201`, `404`, `204`, etc.).
+- Valider les entrées (`req.body` et `req.params`).
+
+## A SUIVRE
+
+-Vérification des entrées .
+-Refactorisation du code
+-Passage en POO
+-Liaison du front end
